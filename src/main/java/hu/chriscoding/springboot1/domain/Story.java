@@ -21,6 +21,13 @@ public class Story {
     public Story() {
     }
 
+    public Story(String title, String content, Date posted, Blogger blogger) {
+        this.title = title;
+        this.content = content;
+        this.posted = posted;
+        this.blogger = blogger;
+    }
+
     public String getTitle() {
         return title;
     }
