@@ -1,13 +1,22 @@
 package hu.chriscoding.springboot1.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Story {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String content;
     private Date posted;
-    private String author;
+
+    @ManyToOne
+    private Blogger blogger;
 
     public Story() {
     }
@@ -36,12 +45,12 @@ public class Story {
         this.posted = posted;
     }
 
-    public String getAuthor() {
-        return author;
+    public Blogger getBlogger() {
+        return blogger;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setBlogger(Blogger blogger) {
+        this.blogger = blogger;
     }
 
     @Override

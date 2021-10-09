@@ -82,31 +82,15 @@
 
     </nav>
 
-
-
-
-
-    <article th:each="story : ${stories}">
+    <article>
         <header>
-            <h1 th:text="${story.title}">Ez itt a cím</h1>
-            <p th:text="${#dates.format(story.posted, 'yyyy.MM.dd HH:mm')}">Posted on September 31, 2015 at 10:00 PM</p>
+            <h1 th:text="${error}">Ez itt a gond</h1>
         </header>
-        <section th:utext="${story.content}">
-            <p>Carl összeráncolta szemöldökét, és felnézett az égre. Bármennyire is erőlködött, nem tudott egyetlen másodpercnél tovább a nap felé nézni. Az égitest vakító ereje bevilágította a környéket, emellett pedig szúrós meleg pontként szurkálta halántékát mind a két oldalról.</p>
 
-            <p> -Feladom… - gondolta, majd tekintetét a játszótérre emelte. Innen a nyolcadik emeletről tökéletesen be lehetett látni az egész grundot. A háztömbök által körülölelt focipályán a gyerekek nyüzsögtek reggeltől estig. Ha az egyiket elhívták a szülei, szinte azonnal jött a helyére egy másik. A hajnalban még négy fős csapatok délutánra nyolc tagúra dagadtak, naplemente előtt pedig már nem is lehetett pontosan megállapítani, hogy melyik térfelen hány gyerek szaladgál fel-alá.</p>
-            <p></p>
+        <section >
+            <p th:text="${message}">Ez az üzenet.</p>
         </section>
-
-        <footer>
-            <address>
-                Beküldte: <span th:text="${story.blogger.name}">Anonymous</span>
-            </address>
-        </footer>
-        <hr/>
     </article>
-
-
 
     <footer>
 
